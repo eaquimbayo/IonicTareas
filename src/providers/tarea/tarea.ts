@@ -10,7 +10,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TareaProvider {
   tareas=[];
-
   constructor() {
     console.log('Hello TareaProvider Provider');
   }
