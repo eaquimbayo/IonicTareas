@@ -1,4 +1,3 @@
-//import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -9,23 +8,32 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class TareaProvider {
-  tareas=[];
+
+  tareas = [];
+  tareasArchivadas = [];
   constructor() {
     console.log('Hello TareaProvider Provider');
   }
-  obtenerTarea(){
+
+  obtenerTareas(){
     return this.tareas;
   }
-  agregarTarea(tarea)
-  {
-this.tareas.push(tarea);
+
+  obtenerTareasArchivadas(){
+    return this.tareasArchivadas;
   }
-archivarTarea()
-  {
-    
+  agregarTarea(tarea){
+    this.tareas.push(tarea);
   }
-  editarTarea()
-  {
-    
+
+  archivarTarea(indice){
+    this.tareasArchivadas.push(this.tareas[indice]);
+    console.log(this.tareasArchivadas);
+    this.tareas.splice(indice,1);
   }
+
+  editarTarea(){
+
+  }
+
 }
